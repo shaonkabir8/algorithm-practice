@@ -2,49 +2,45 @@
 
 // one way to create this Array is directly .
 
-/* var i8 = new Int8Array(3);
+var i8 = new Int8Array(3);
 console.log(i8);
- */
 
 // I can also create a buffer to asign the byteSize .
 
-/* const byteSize = 6;
+const byteSize = 6;
 const buffer = new ArrayBuffer(byteSize);
-console.log(buffer)
+console.log(buffer);
 let i8View = new Int16Array(buffer);
-console.log(i8View)
+console.log(i8View);
 console.log(buffer.byteLength);
-console.log(i8View.byteLength)
+console.log(i8View.byteLength);
 
 i8View[0] = 64;
 
-i8View = i8View.map(element => element + 2)
-console.log(i8View)
-
+i8View = i8View.map((element) => element + 2);
+console.log(i8View);
 
 const arr = [2, 5, 8, 10];
 
-console.log(Array.isArray(i8View))
-console.log(Array.isArray(arr))
- */
+console.log(Array.isArray(i8View));
+console.log(Array.isArray(arr));
 
 // problem solving 1
 
-/* const byteSize = 64;
+const byteSize = 64;
 const buffer = new ArrayBuffer(byteSize);
 const i32View = new Int32Array(buffer);
 
-console.log(i32View) */
+console.log(i32View);
 
 /* Going for the next solution  */
 
 // this is for push and pop Array mathod for push an item to the last element and pop for removing data from the last element as well as it will store the removal data to a new variable .
 
-/* var homeworkStack = ["BIO12", "HIS80", "MAT122", "PSY44"];
+var homeworkStack = ["BIO12", "HIS80", "MAT122", "PSY44"];
 // Only change code below this line
 homeworkStack.pop();
-homeworkStack.push('CS50')
- */
+homeworkStack.push("CS50");
 
 /* Going for the next solution  */
 
@@ -284,29 +280,34 @@ class Set {
   }
 
   // change code below this line
-  
+
   // write your add method here
 
+  add(item) {
+    let valueOfArr = Object.entries(this.dictionary);
+
+    if (valueOfArr.includes(item)) {
+      return false;
+    } else {
+      valueOfArr.push(item);
+
+      this.length++;
+      console.log(valueOfArr);
+    }
+  }
+
   // write your remove method here
-
+  remove() {
+    let entriValue = Object.entries(this.dictionary);
+    console.log(entriValue);
+  }
   // write your size method here
-
   // change code above this line
 }
 
-
-/* Going for the next solution  */
-/* Going for the next solution  */
-/* Going for the next solution  */
-/* Going for the next solution  */
-/* Going for the next solution  */
-/* Going for the next solution  */
-/* Going for the next solution  */
-/* Going for the next solution  */
-/* Going for the next solution  */
-/* Going for the next solution  */
-/* Going for the next solution  */
-/* Going for the next solution  */
-/* Going for the next solution  */
-/* Going for the next solution  */
-/* Going for the next solution  */
+const Set1 = new Set();
+console.log(Set1.add("a"));
+console.log(Set1.add("a"));
+console.log(Set1.dictionary);
+console.log(Set1.length);
+console.log(Set1.remove("a"));
