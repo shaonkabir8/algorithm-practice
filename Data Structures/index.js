@@ -1,4 +1,4 @@
-// there are two ways to create such this type of Array. means byte sized array ...
+/* // there are two ways to create such this type of Array. means byte sized array ...
 
 // one way to create this Array is directly .
 
@@ -33,14 +33,14 @@ const i32View = new Int32Array(buffer);
 
 console.log(i32View);
 
-/* Going for the next solution  */
+ Going for the next solution  
 
 // this is for push and pop Array mathod for push an item to the last element and pop for removing data from the last element as well as it will store the removal data to a new variable .
 
 var homeworkStack = ["BIO12", "HIS80", "MAT122", "PSY44"];
 // Only change code below this line
 homeworkStack.pop();
-homeworkStack.push("CS50");
+homeworkStack.push("CS50"); */
 
 /* Going for the next solution  */
 
@@ -284,30 +284,46 @@ class Set {
   // write your add method here
 
   add(item) {
-    let valueOfArr = Object.entries(this.dictionary);
-
-    if (valueOfArr.includes(item)) {
-      return false;
-    } else {
-      valueOfArr.push(item);
+    let valueOfObject = Object.values(this.dictionary);
+    console.log(valueOfObject.includes(item));
+    if (!valueOfObject.includes(item)) {
+      this.dictionary[item] = item;
 
       this.length++;
-      console.log(valueOfArr);
+
+      return true;
+    } else {
+      return false;
     }
   }
 
   // write your remove method here
-  remove() {
+  remove(item) {
     let entriValue = Object.entries(this.dictionary);
-    console.log(entriValue);
+
+    if (entriValue.length === 0) {
+      return false;
+    }
+
+    let output = entriValue.filter((element) => element[0] !== item);
+
+    this.dictionary = Object.fromEntries(output);
+
+    return true;
   }
   // write your size method here
+  size() {
+    let entriValue = Object.entries(this.dictionary);
+    return entriValue.length;
+  }
   // change code above this line
 }
 
 const Set1 = new Set();
 console.log(Set1.add("a"));
 console.log(Set1.add("a"));
+console.log(Set1.add("d"));
 console.log(Set1.dictionary);
+console.log(Set1.has("a"));
 console.log(Set1.length);
 console.log(Set1.remove("a"));
