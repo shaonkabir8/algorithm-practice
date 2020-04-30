@@ -1,4 +1,4 @@
-/* // there are two ways to create such this type of Array. means byte sized array ...
+// there are two ways to create such this type of Array. means byte sized array ...
 
 // one way to create this Array is directly .
 
@@ -33,14 +33,14 @@ const i32View = new Int32Array(buffer);
 
 console.log(i32View);
 
- Going for the next solution  
+/*  Going for the next solution   */
 
 // this is for push and pop Array mathod for push an item to the last element and pop for removing data from the last element as well as it will store the removal data to a new variable .
 
 var homeworkStack = ["BIO12", "HIS80", "MAT122", "PSY44"];
 // Only change code below this line
 homeworkStack.pop();
-homeworkStack.push("CS50"); */
+homeworkStack.push("CS50");
 
 /* Going for the next solution  */
 
@@ -262,7 +262,7 @@ console.log(CircularQueue1.print());
 
 /* Going for the next solution  */
 
-class Set {
+class Set5 {
   constructor() {
     // Dictionary will hold the items of our set
     this.dictionary = {};
@@ -319,7 +319,7 @@ class Set {
   // change code above this line
 }
 
-const Set1 = new Set();
+const Set1 = new Set5();
 console.log(Set1.add("a"));
 console.log(Set1.add("a"));
 console.log(Set1.add("d"));
@@ -327,3 +327,67 @@ console.log(Set1.dictionary);
 console.log(Set1.has("a"));
 console.log(Set1.length);
 console.log(Set1.remove("a"));
+
+/* Going for the next solution  */
+
+class Set {
+  constructor() {
+    // This will hold the set
+    this.dictionary = {};
+    this.length = 0;
+  }
+  // this method will check for the presence of an element and return true or false
+  has(element) {
+    return this.dictionary[element] !== undefined;
+  }
+  // this method will return all the values in the set
+  values() {
+    return Object.keys(this.dictionary);
+  }
+  // this method will add an element to the set
+  add(element) {
+    if (!this.has(element)) {
+      this.dictionary[element] = true;
+      this.length++;
+      return true;
+    }
+
+    return false;
+  }
+  // this method will remove an element from a set
+  remove(element) {
+    if (this.has(element)) {
+      delete this.dictionary[element];
+      this.length--;
+      return true;
+    }
+
+    return false;
+  }
+  // this method will return the size of the set
+  size() {
+    return this.length;
+  }
+  // change code below this line
+  union (dataSet){
+    const newSet = new Set();
+    console.log(newSet)
+    const addToSet = el => newSet.add(el);
+    this.values().forEach(addToSet);
+    dataSet.values().forEach(addToSet);
+    console.log(newSet)
+    return newSet;
+};
+
+  // change code above this line
+}
+
+const Set2 = new Set();
+console.log(Set2.add("a"));
+console.log(Set2.add("a"));
+console.log(Set2.add("d"));
+console.log(Set2.dictionary);
+console.log(Set2.has("a"));
+console.log(Set2.length);
+Set2.union(new Set([1, 5, 8]))
+
