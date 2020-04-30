@@ -25,25 +25,31 @@ function checkSet2() {
   return set;
 }
 
+/* Going for the next challange */
+
+function checkSet3(arrToBeSet, checkValue) {
+  // change code below this line
+  const set = new Set(arrToBeSet);
+
+  const hasValue = set.has(checkValue);
+  const howBig = set.size;
+
+  return [hasValue, howBig];
+
+  // change code above this line
+}
+
+checkSet3([1, 2, 3], 2); // Should return [ true, 3 ]
 
 
 /* Going for the next challange */
 
 
+function checkSet(set){
+  // change code below this line
+  return [...set]
 
-function checkSet(arrToBeSet, checkValue){
+  // change code above this line
+}
 
-    // change code below this line
-    const set = new Set(arrToBeSet);
 
-    const hasValue = set.has(checkValue);
-    const howBig = set.size;
-
-    return [hasValue, howBig]
- 
-    // change code above this line
- 
- }
- 
- checkSet([ 1, 2, 3], 2); // Should return [ true, 3 ]
- 
