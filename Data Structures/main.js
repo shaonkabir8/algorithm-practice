@@ -1,4 +1,4 @@
-class Set {
+class Set1 {
   constructor() {
     // This will hold the set
     this.dictionary = {};
