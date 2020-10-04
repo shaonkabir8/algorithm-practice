@@ -8,7 +8,7 @@ It is quite simple to test any of these `Data Structure` or `Algorithm`.
 
 __🎉 Clone the repo & Start Hacking 😎__ 
 
-🚀 Example: `node Basic-Algorithms/reverse-a-string.js`
+🚀 Example: `node basic-algorithms/reverse-a-string.js`
 
 
 ## 📝 Let's have a look what's inside ? 🧐 
